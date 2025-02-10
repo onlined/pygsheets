@@ -239,7 +239,7 @@ wks.apply_format(['A1:B1', 'D:E'], ["NUMBER", "TEXT"])
 wks.add_chart(('A1', 'A6'), [('B1', 'B6')], 'Health Trend')
 
 # create drop-downs
-wks.set_data_validation(start='C4', end='E7', condition_type='NUMBER_BETWEEN', condition_values=[2,10], strict=True, inputMessage="inut between 2 and 10")
+wks.set_data_validation(start='C4', end='E7', condition_type='NUMBER_BETWEEN', condition_values=[2,10], strict=True, showCustomUi=True, inputMessage="inut between 2 and 10")
 
 # set a formula and extend it to more cells
 cell = wks.cell('C1')
@@ -410,13 +410,13 @@ This library is still in development phase.
 * Branch off of the `staging` branch, and submit Pull Requests back to
   that branch.  Note that the `master` branch is used for version
   bumps and hotfixes only.
-* For quick testing the changes you have made to source, run the file `tests/manual_testing.py`. It will give you an IPython shell with lastest code loaded.
+* For quick testing the changes you have made to source, run the file `tests/manual_testing.py`. It will give you an IPython shell with latest code loaded.
 
 ### Report Issues/Features
 
 * Please report bugs and suggest features via the [GitHub Issues](https://github.com/nithinmurali/pygsheets/issues).
 * Before opening an issue, search the tracker for possible duplicates.
-* If you have any usage questions, ask a question on stackoverflow with `pygsheets` Tag
+* If you have any usage questions, ask a question on stackoverflow with `pygsheets` Tag.
 
 ## Run Tests
 * install `pip install -r requirements-dev.txt`
