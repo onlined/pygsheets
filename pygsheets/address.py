@@ -40,7 +40,6 @@ class Address(object):
     _MAGIC_NUMBER = 64
 
     def __init__(self, value, allow_non_single=False):
-        self._is_single = True
         self.allow_non_single = allow_non_single
 
         if isinstance(value, str):
