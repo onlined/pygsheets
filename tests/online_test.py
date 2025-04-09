@@ -14,12 +14,7 @@ from pygsheets import Cell
 import pygsheets.utils as utils
 from pygsheets.custom_types import HorizontalAlignment, VerticalAlignment
 
-try:
-    # for python 2.x
-    import ConfigParser
-except ImportError:
-    # for python 3.6+
-    import configparser as ConfigParser
+import configparser
 
 CONFIG_FILENAME = os.path.join(os.path.dirname(__file__), 'data/tests.config')
 SERVICE_FILE_NAME = os.path.join(os.path.dirname(__file__), 'auth_test_data/pygsheettest_service_account.json')
@@ -28,11 +23,8 @@ PYTHON_VERSION = str(sys.hexversion)
 
 
 def read_config(filename):
-    config = ConfigParser.ConfigParser()
-    if sys.version_info >= (3, 2):
-        config.read_file(open(filename))
-    else:
-        config.readfp(open(filename))
+    config = configparser.ConfigParser()
+    config.read_file(open(filename))
     return config
 
 

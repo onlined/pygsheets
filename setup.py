@@ -11,7 +11,6 @@ import sys
 
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist")
-    os.system("python2 setup.py bdist_wheel")
     os.system("python3 setup.py bdist_wheel")
     os.system('twine upload dist/* -r pypi')
     sys.exit()
@@ -49,7 +48,7 @@ setup(
     download_url='https://github.com/nithinmurali/pygsheets/tarball/'+version,
     include_package_data=True,
     package_data={'data': ['data/drive_discovery.json', 'data/sheets_discovery.json']},
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
+    python_requires='>=3.4',
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
