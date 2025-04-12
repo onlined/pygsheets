@@ -649,7 +649,7 @@ class TestWorkSheet(object):
         assert 1 == len(cells)
         cells = self.worksheet.find('100', matchEntireCell=False, includeFormulas=True)
         assert 2 == len(cells)
-        cells = self.worksheet.find('\w+', searchByRegex=True)
+        cells = self.worksheet.find(r'\w+', searchByRegex=True)
         assert 7 == len(cells)
         self.worksheet.clear('A1', 'H1')
 
