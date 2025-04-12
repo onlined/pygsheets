@@ -407,7 +407,7 @@ Batching also happens when you unlink worksheet. But in that case the requests a
 
 This library is still in development phase.
  
-* Follow the [Contributing to Open Source](https://guides.github.com/activities/contributing-to-open-source/) Guide.
+* Follow the [Contributing to Open Source](https://opensource.guide/) Guide.
 * Branch off of the `staging` branch, and submit Pull Requests back to
   that branch.  Note that the `master` branch is used for version
   bumps and hotfixes only.
