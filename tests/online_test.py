@@ -29,7 +29,10 @@ PYTHON_VERSION = str(sys.hexversion)
 
 def read_config(filename):
     config = ConfigParser.ConfigParser()
-    config.readfp(open(filename))
+    if sys.version_info >= (3, 2):
+        config.read_file(open(filename))
+    else:
+        config.readfp(open(filename))
     return config
 
 
