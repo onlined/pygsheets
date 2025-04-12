@@ -143,7 +143,7 @@ def format_color(data, to='dict'):
     :param to: 'dict' or 'tuple'
     """
     if not (type(data) is dict or type(data) is tuple):
-        InvalidArgumentValue('data should be tuple or dict')
+        raise InvalidArgumentValue('data should be tuple or dict')
 
     if type(data) is tuple and to == 'dict':
         return {"red": data[0], "green": data[1], "blue": data[2], "alpha": data[3]}
