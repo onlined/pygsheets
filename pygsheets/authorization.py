@@ -63,17 +63,9 @@ def _get_user_authentication_credentials(client_secret_file, scopes, credential_
         credentials = _get_initial_user_authentication_credentials(client_secret_file, local, scopes)
 
     # Save the credentials for the next run
-    credentials_as_dict = {
-        'token': credentials.token,
-        'refresh_token': credentials.refresh_token,
-        'id_token': credentials.id_token,
-        'token_uri': credentials.token_uri,
-        'client_id': credentials.client_id,
-        'client_secret': credentials.client_secret
-    }
     try:
-        with open(credentials_path, 'w') as file:
-            file.write(json.dumps(credentials_as_dict))
+        with open(credentials_path, mode='w') as file:
+            file.write(credentials.to_json())
     except OSError:
         print("Unable to save the credentials to file-system")
 
