@@ -11,11 +11,6 @@ from google.auth.transport.requests import Request
 
 from pygsheets.client import Client
 
-try:
-    input = raw_input
-except NameError:
-    pass
-
 
 def _get_initial_user_authentication_credentials(client_secret_file, local, scopes):
     if local:
